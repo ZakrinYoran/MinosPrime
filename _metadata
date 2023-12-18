@@ -1,0 +1,13 @@
+{
+  "name": "MinosPrime",
+  "friendly_name": "Minos Prime",
+  "description": "Minos Prime",
+  "author": "Minos Prime",
+  "version": "1.0",
+  "link": "",
+  "id": "00001",
+  "requires": [""],
+  "overwrites": false,
+  "client_side": false,
+  "priority": 0,
+}
