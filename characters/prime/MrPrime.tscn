@@ -1,35 +1,392 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=79 format=2]
 
-[ext_resource path="res://characters/stickman/NinjaGuy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/wait.png" type="Texture" id=1]
+[ext_resource path="res://characters/stickman/sprites/stickman38.png" type="Texture" id=2]
+[ext_resource path="res://characters/stickman/sprites/stickman35.png" type="Texture" id=3]
+[ext_resource path="res://characters/stickman/sprites/stickman37.png" type="Texture" id=4]
+[ext_resource path="res://ui/ActionSelector/StateIcons/punch.png" type="Texture" id=5]
+[ext_resource path="res://MinosPrime/characters/prime/actionuidata/thy.gd" type="Script" id=6]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy0.png" type="Texture" id=7]
+[ext_resource path="res://characters/stickman/sprites/stickman42.png" type="Texture" id=8]
+[ext_resource path="res://characters/stickman/sprites/stickman51.png" type="Texture" id=9]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy2.png" type="Texture" id=10]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy9.png" type="Texture" id=11]
+[ext_resource path="res://MinosPrime/characters/prime/sounds/Thy.wav" type="AudioStream" id=12]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy1.png" type="Texture" id=13]
+[ext_resource path="res://characters/stickman/sprites/stickman33.png" type="Texture" id=14]
+[ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=15]
+[ext_resource path="res://characters/stickman/sprites/stickman58.png" type="Texture" id=16]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy5.png" type="Texture" id=17]
+[ext_resource path="res://characters/stickman/sprites/stickman32.png" type="Texture" id=18]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy6.png" type="Texture" id=19]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy8.png" type="Texture" id=20]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy7.png" type="Texture" id=21]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy10.png" type="Texture" id=22]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy4.png" type="Texture" id=23]
+[ext_resource path="res://characters/stickman/sprites/stickman45.png" type="Texture" id=24]
+[ext_resource path="res://characters/stickman/sprites/stickman44.png" type="Texture" id=25]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy3.png" type="Texture" id=26]
+[ext_resource path="res://ui/ActionSelector/StateIcons/nunchuk_heavy.png" type="Texture" id=27]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/end/end0.png" type="Texture" id=28]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/end/end2.png" type="Texture" id=29]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/end/end4.png" type="Texture" id=30]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/end/end3.png" type="Texture" id=31]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/end/end1.png" type="Texture" id=32]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/end/end7.png" type="Texture" id=33]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/end/end6.png" type="Texture" id=34]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/end/end5.png" type="Texture" id=35]
+[ext_resource path="res://MinosPrime/characters/prime/sounds/End.wav" type="AudioStream" id=36]
+[ext_resource path="res://characters/stickman/sprites/stickman59.png" type="Texture" id=38]
+[ext_resource path="res://characters/stickman/sprites/stickman61.png" type="Texture" id=43]
+[ext_resource path="res://characters/stickman/sprites/stickman60.png" type="Texture" id=45]
+[ext_resource path="res://characters/stickman/sprites/wall_slam.png" type="Texture" id=49]
+[ext_resource path="res://ui/ActionSelector/StateIcons/wait.png" type="Texture" id=50]
+[ext_resource path="res://characters/stickman/sprites/stickman27.png" type="Texture" id=51]
+[ext_resource path="res://characters/stickman/sprites/stickman29.png" type="Texture" id=52]
+[ext_resource path="res://characters/stickman/sprites/stickman34.png" type="Texture" id=54]
+[ext_resource path="res://characters/stickman/sprites/stickman36.png" type="Texture" id=55]
+[ext_resource path="res://characters/BaseChar.gdshader" type="Shader" id=57]
+[ext_resource path="res://characters/stickman/sprites/stickman10.png" type="Texture" id=58]
+[ext_resource path="res://characters/stickman/sprites/stickman7.png" type="Texture" id=59]
+[ext_resource path="res://characters/stickman/sprites/stickman5.png" type="Texture" id=60]
+[ext_resource path="res://characters/stickman/sprites/stickman26.png" type="Texture" id=61]
+[ext_resource path="res://characters/stickman/sprites/stickman8.png" type="Texture" id=64]
+[ext_resource path="res://characters/stickman/sprites/stickman9.png" type="Texture" id=65]
+[ext_resource path="res://characters/stickman/sprites/stickman24.png" type="Texture" id=69]
+[ext_resource path="res://characters/stickman/sprites/stickman3.png" type="Texture" id=70]
+[ext_resource path="res://characters/stickman/sprites/stickman57.png" type="Texture" id=75]
+[ext_resource path="res://characters/stickman/sprites/stickman6.png" type="Texture" id=76]
+[ext_resource path="res://characters/stickman/sprites/stickman17.png" type="Texture" id=77]
+[ext_resource path="res://characters/stickman/sprites/stickman4.png" type="Texture" id=79]
+[ext_resource path="res://characters/stickman/sprites/stickman18.png" type="Texture" id=80]
+[ext_resource path="res://characters/stickman/sprites/stickman2.png" type="Texture" id=81]
+[ext_resource path="res://characters/stickman/sprites/stickman30.png" type="Texture" id=82]
+[ext_resource path="res://mechanics/Hitbox.gd" type="Script" id=83]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement11.png" type="Texture" id=84]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement9.png" type="Texture" id=85]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement8.png" type="Texture" id=86]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement3.png" type="Texture" id=87]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement4.png" type="Texture" id=88]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement6.png" type="Texture" id=89]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement10.png" type="Texture" id=90]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement2.png" type="Texture" id=91]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement7.png" type="Texture" id=92]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement5.png" type="Texture" id=93]
+[ext_resource path="res://MinosPrime/characters/prime/actionuidata/judgement.gd" type="Script" id=94]
+[ext_resource path="res://sound/common/explosion2.wav" type="AudioStream" id=95]
+[ext_resource path="res://sound/common/burst.wav" type="AudioStream" id=96]
+[ext_resource path="res://MinosPrime/characters/prime/sounds/Judgement.wav" type="AudioStream" id=97]
 
-[node name="Ninja" instance=ExtResource( 1 )]
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 57 )
+shader_param/use_extra_color_1 = false
+shader_param/use_extra_color_2 = false
+shader_param/extra_replace_color_1 = Color( 1, 0, 1, 1 )
+shader_param/extra_replace_color_2 = Color( 1, 0, 1, 1 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/extra_color_1 = Color( 1, 1, 1, 1 )
+shader_param/extra_color_2 = Color( 1, 1, 1, 1 )
+shader_param/max_color_distance = 0.01
+shader_param/super_dim = false
+shader_param/use_outline = false
+shader_param/outline_color = Color( 0, 0, 0, 1 )
 
-[node name="HurtboxState" parent="StateMachine/GroundedKick" index="1"]
-z_index = 999
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 52 ) ],
+"loop": true,
+"name": "Burst",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 70 ) ],
+"loop": true,
+"name": "DashBackward",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 81 ) ],
+"loop": true,
+"name": "DashForward",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "DiveKick",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 76 ), ExtResource( 59 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "DoubleJump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "DropKick",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 32 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "End",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 61 ), ExtResource( 61 ), ExtResource( 61 ), ExtResource( 61 ), ExtResource( 61 ), ExtResource( 61 ), ExtResource( 61 ), ExtResource( 61 ), ExtResource( 61 ), ExtResource( 61 ), ExtResource( 61 ), ExtResource( 61 ), ExtResource( 51 ) ],
+"loop": true,
+"name": "Fireball",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 38 ), ExtResource( 38 ), ExtResource( 38 ), ExtResource( 38 ), ExtResource( 38 ), ExtResource( 38 ), ExtResource( 38 ), ExtResource( 38 ), ExtResource( 38 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "ForwardThrow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Getup",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 75 ), ExtResource( 75 ), ExtResource( 75 ), ExtResource( 75 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Grab",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 60 ) ],
+"loop": true,
+"name": "Grabbed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 54 ), ExtResource( 54 ), ExtResource( 54 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 55 ) ],
+"loop": true,
+"name": "GroundedKick",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 77 ) ],
+"loop": true,
+"name": "HurtAerial",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 58 ) ],
+"loop": true,
+"name": "HurtGroundedHigh",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 80 ) ],
+"loop": true,
+"name": "HurtGroundedLow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 65 ) ],
+"loop": true,
+"name": "HurtGroundedMid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "InstantCancel",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 91 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 93 ), ExtResource( 89 ), null, ExtResource( 92 ), ExtResource( 86 ), ExtResource( 85 ), ExtResource( 90 ), ExtResource( 84 ) ],
+"loop": true,
+"name": "Judgement",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 79 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 64 ), ExtResource( 59 ), ExtResource( 76 ) ],
+"loop": true,
+"name": "JumpBack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 82 ) ],
+"loop": true,
+"name": "Knockdown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 69 ) ],
+"loop": true,
+"name": "Landing",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "ParryHigh",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "ParryLow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 64 ), ExtResource( 59 ), ExtResource( 76 ), ExtResource( 60 ) ],
+"loop": true,
+"name": "RollBackward",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 76 ), ExtResource( 59 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "RollForward",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 43 ) ],
+"loop": true,
+"name": "ThrowTech",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Thy",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Wait",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 49 ) ],
+"loop": true,
+"name": "WallSlam",
+"speed": 5.0
+} ]
 
-[node name="HurtboxState" parent="StateMachine/GroundedSweep" index="1"]
-z_index = 999
+[node name="MrPrime" instance=ExtResource( 15 )]
+character_portrait = ExtResource( 1 )
+extra_color_1 = Color( 0.431373, 0.52549, 0.588235, 1 )
+extra_color_2 = Color( 0.627451, 0.796078, 0.905882, 1 )
 
-[node name="HurtboxState" parent="StateMachine/GroundedSweepQS" index="1"]
-z_index = 999
+[node name="Sprite" parent="Flip" index="0"]
+material = SubResource( 1 )
+frames = SubResource( 2 )
+animation = "End"
+frame = 3
 
-[node name="HurtboxState" parent="StateMachine/DropKick" index="1"]
-z_index = 999
+[node name="DashBackward" parent="StateMachine" index="26"]
+show_in_menu = false
 
-[node name="HurtboxState" parent="StateMachine/SlideKick" index="1"]
-z_index = 999
+[node name="Judgement" type="Node2D" parent="StateMachine" index="54"]
+script = ExtResource( 94 )
+sprite_animation = "Judgement"
+anim_length = 10
+enter_sfx = ExtResource( 97 )
+enter_sfx_volume = -5.0
+title = "Judgement"
+type = 3
+button_texture = ExtResource( 50 )
+interruptible_on_opponent_turn = true
+interrupt_from_string = "GroundedIdle
+Grounded
+Wait"
+interrupt_into_string = "Grounded
+Aerial"
+super_level_ = 3
+supers_used_ = 3
 
-[node name="HurtboxState" parent="StateMachine/SlideKickOld" index="1"]
-z_index = 999
+[node name="Hitbox" type="Node2D" parent="StateMachine/Judgement" index="0"]
+z_index = 1000
+script = ExtResource( 83 )
+x = 20
+y = -18
+height = 8
+damage = 1
+hitstun_ticks = 23
+victim_hitlag = 4
+cancellable = false
+hits_otg = true
+can_counter_hit = false
+sdi_modifier = "0.0"
+ignore_armor = true
+can_clash = false
+guard_break = true
+block_punishable = true
+screenshake_amount = 100
+screenshake_frames = 10
+whiff_sound = ExtResource( 96 )
+hit_sound = ExtResource( 95 )
+dir_y = "-0.25"
+knockback = "14.0"
+launch_reversible = true
+start_tick = 10
+active_ticks = 3
 
-[node name="HurtboxState" parent="StateMachine/SlideKickAir" index="1"]
-z_index = 999
+[node name="Thy" type="Node2D" parent="StateMachine" index="55"]
+script = ExtResource( 6 )
+apply_forces = true
+sprite_animation = "Thy"
+anim_length = 11
+force_dir_x = "-1"
+force_speed = "7"
+force_tick = 6
+enter_force_dir_x = "1"
+enter_force_speed = "8"
+enter_sfx = ExtResource( 12 )
+enter_sfx_volume = -5.0
+title = "Thy"
+type = 1
+button_texture = ExtResource( 5 )
+interrupt_from_string = "GroundedAttack
+GroundedLight
+Grounded"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "GroundedAttack
+GroundedSpecial
+GroundedSuper
+AerialAttack
+AerialSpecial
+AerialSuper
+Jump"
 
-[node name="HurtboxState" parent="StateMachine/SlideKick2" index="1"]
-z_index = 999
+[node name="Hitbox" type="Node2D" parent="StateMachine/Thy" index="0"]
+z_index = 1000
+script = ExtResource( 83 )
+x = 34
+y = -30
+width = 22
+height = 8
+damage = 30
+hitstun_ticks = 12
+victim_hitlag = 4
+damage_proration = 2
+knockback = "2.0"
+start_tick = 7
+active_ticks = 2
 
-[node name="HurtboxState" parent="StateMachine/HitGrab" index="1"]
-z_index = 999
+[node name="End" type="Node2D" parent="StateMachine" index="56"]
+script = ExtResource( 6 )
+apply_forces = true
+sprite_animation = "End"
+anim_length = 8
+enter_force_speed = "8"
+enter_sfx = ExtResource( 36 )
+enter_sfx_volume = -5.0
+title = "End"
+type = 1
+button_texture = ExtResource( 27 )
+interrupt_from_string = "GroundedAttack
+GroundedLight
+Grounded"
+interrupt_into_string = "Grounded
+Aerial"
+hit_cancel_into_string = "GroundedAttack
+GroundedSpecial
+GroundedSuper
+AerialAttack
+AerialSpecial
+AerialSuper
+Jump"
 
-[node name="HurtboxState" parent="StateMachine/HitGrab2" index="1"]
-z_index = 999
+[node name="Hitbox" type="Node2D" parent="StateMachine/End" index="0"]
+z_index = 1000
+script = ExtResource( 83 )
+x = 26
+y = -31
+width = 12
+height = 28
+damage = 30
+hitstun_ticks = 12
+victim_hitlag = 4
+damage_proration = 2
+knockback = "2.0"
+start_tick = 4
+active_ticks = 2
