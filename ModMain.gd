@@ -4,11 +4,16 @@ var _savedObjects = []
 
 
 func _init(modLoader = ModLoader):
+	print("Initializing Minos Prime")
+	
+	installScriptExtension("res://MinosPrime/ModOverride.gd")
 	installScriptExtension("res://MinosPrime/CharacterSelect.gd")
 
-
-func _ready():
-	pass
+# Check if mod options is installed
+	if ResourceLoader.exists("res://SoupModOptions/ModOptions.gd"):
+		installScriptExtension("res://MinosPrime/ModOptions.gd")
+	else:
+		print("Mod Options not installed, settings not availible.")
 
 
 # Helper function to replace scenes

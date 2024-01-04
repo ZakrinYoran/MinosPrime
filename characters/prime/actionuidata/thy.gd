@@ -1,1 +1,1 @@
-extends CharacterState
+extends "res://MinosPrime/MinosState.gd"

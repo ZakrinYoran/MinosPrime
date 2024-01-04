@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://MinosPrime/characters/prime/sprites/wait.png" type="Texture" id=1]
 [ext_resource path="res://characters/stickman/sprites/stickman38.png" type="Texture" id=2]
@@ -11,7 +11,7 @@
 [ext_resource path="res://fx/DashFloorParticle.tscn" type="PackedScene" id=9]
 [ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy2.png" type="Texture" id=10]
 [ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy9.png" type="Texture" id=11]
-[ext_resource path="res://MinosPrime/characters/prime/sounds/Thy.wav" type="AudioStream" id=12]
+[ext_resource path="res://MinosPrime/characters/prime/sounds/voicelines/Thy.wav" type="AudioStream" id=12]
 [ext_resource path="res://MinosPrime/characters/prime/sprites/thy/thy1.png" type="Texture" id=13]
 [ext_resource path="res://characters/stickman/sprites/stickman33.png" type="Texture" id=14]
 [ext_resource path="res://characters/BaseChar.tscn" type="PackedScene" id=15]
@@ -35,7 +35,7 @@
 [ext_resource path="res://MinosPrime/characters/prime/sprites/end/end7.png" type="Texture" id=33]
 [ext_resource path="res://MinosPrime/characters/prime/sprites/end/end6.png" type="Texture" id=34]
 [ext_resource path="res://MinosPrime/characters/prime/sprites/end/end5.png" type="Texture" id=35]
-[ext_resource path="res://MinosPrime/characters/prime/sounds/End.wav" type="AudioStream" id=36]
+[ext_resource path="res://MinosPrime/characters/prime/sounds/voicelines/End.wav" type="AudioStream" id=36]
 [ext_resource path="res://MinosPrime/characters/prime/sprites/hurt/hurt_air.png" type="Texture" id=37]
 [ext_resource path="res://characters/stickman/sprites/stickman59.png" type="Texture" id=38]
 [ext_resource path="res://MinosPrime/characters/prime/sprites/hurt/hurt_high.png" type="Texture" id=39]
@@ -60,13 +60,15 @@
 [ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement12.png" type="Texture" id=58]
 [ext_resource path="res://characters/stickman/sprites/stickman7.png" type="Texture" id=59]
 [ext_resource path="res://characters/stickman/sprites/stickman5.png" type="Texture" id=60]
+[ext_resource path="res://MinosPrime/characters/prime/MinosPrime.gd" type="Script" id=61]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/knockdown.png" type="Texture" id=62]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/jump.png" type="Texture" id=63]
 [ext_resource path="res://characters/stickman/sprites/stickman8.png" type="Texture" id=64]
+[ext_resource path="res://MinosPrime/characters/prime/sounds/sfx/judgement.wav" type="AudioStream" id=65]
 [ext_resource path="res://characters/stickman/sprites/stickman24.png" type="Texture" id=69]
 [ext_resource path="res://characters/stickman/sprites/stickman3.png" type="Texture" id=70]
 [ext_resource path="res://characters/stickman/sprites/stickman57.png" type="Texture" id=75]
 [ext_resource path="res://characters/stickman/sprites/stickman6.png" type="Texture" id=76]
-[ext_resource path="res://characters/stickman/sprites/stickman4.png" type="Texture" id=79]
-[ext_resource path="res://characters/stickman/sprites/stickman30.png" type="Texture" id=82]
 [ext_resource path="res://mechanics/Hitbox.gd" type="Script" id=83]
 [ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement11.png" type="Texture" id=84]
 [ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement9.png" type="Texture" id=85]
@@ -81,7 +83,7 @@
 [ext_resource path="res://MinosPrime/characters/prime/actionuidata/judgement.gd" type="Script" id=94]
 [ext_resource path="res://sound/common/explosion2.wav" type="AudioStream" id=95]
 [ext_resource path="res://sound/common/burst.wav" type="AudioStream" id=96]
-[ext_resource path="res://MinosPrime/characters/prime/sounds/Judgement.wav" type="AudioStream" id=97]
+[ext_resource path="res://MinosPrime/characters/prime/sounds/voicelines/Judgement.wav" type="AudioStream" id=97]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -170,7 +172,7 @@ animations = [ {
 "name": "Judgement",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 79 ) ],
+"frames": [ ExtResource( 63 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 5.0
@@ -180,7 +182,7 @@ animations = [ {
 "name": "JumpBack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 82 ) ],
+"frames": [ ExtResource( 62 ) ],
 "loop": true,
 "name": "Knockdown",
 "speed": 5.0
@@ -225,7 +227,7 @@ animations = [ {
 "name": "Wait",
 "speed": 30.0
 }, {
-"frames": [ ExtResource( 44 ), ExtResource( 44 ), ExtResource( 46 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 48 ) ],
+"frames": [ ExtResource( 44 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ) ],
 "loop": true,
 "name": "WalkForward",
 "speed": 5.0
@@ -237,16 +239,27 @@ animations = [ {
 } ]
 
 [node name="MrPrime" instance=ExtResource( 15 )]
+script = ExtResource( 61 )
 character_portrait = ExtResource( 1 )
+use_extra_color_1 = true
 extra_color_1 = Color( 0.431373, 0.52549, 0.588235, 1 )
+use_extra_color_2 = true
 extra_color_2 = Color( 0.627451, 0.796078, 0.905882, 1 )
 
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
 frames = SubResource( 2 )
-animation = "Judgement"
-frame = 14
+animation = "HurtAerial"
 offset = Vector2( 0, -17 )
+
+[node name="CollisionBox" parent="." index="2"]
+x = -1
+
+[node name="Hurtbox" parent="." index="3"]
+x = -2
+
+[node name="Fall" parent="StateMachine" index="17"]
+sprite_animation = "Wait"
 
 [node name="DashForward" parent="StateMachine" index="24"]
 show_in_menu = false
@@ -267,7 +280,8 @@ script = ExtResource( 24 )
 reset_momentum = true
 sprite_animation = "WalkForward"
 anim_length = 15
-sprite_anim_length = 8
+sprite_anim_length = 12
+ticks_per_frame = 3
 loop_animation = true
 absolute_loop = true
 enter_force_dir_x = "1.0"
@@ -300,6 +314,9 @@ sprite_animation = "Judgement"
 anim_length = 16
 enter_sfx = ExtResource( 97 )
 enter_sfx_volume = -5.0
+sfx = ExtResource( 65 )
+sfx_tick = 14
+sfx_volume = -5.0
 title = "Judgement"
 type = 3
 button_texture = ExtResource( 50 )

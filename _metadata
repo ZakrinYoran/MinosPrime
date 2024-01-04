@@ -3,11 +3,11 @@
   "friendly_name": "Minos Prime",
   "description": "Minos Prime",
   "author": "Minos Prime",
-  "version": "0.1.1",
+  "version": "0.5.0",
   "link": "https://github.com/ZakrinYoran/MinosPrime",
   "id": "00000",
   "requires": [
-	"char_loader"
+	"char_loader",
   ],
   "overwrites": false,
   "client_side": false,
