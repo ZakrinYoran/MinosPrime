@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://MinosPrime/characters/prime/sprites/wait.png" type="Texture" id=1]
 [ext_resource path="res://characters/stickman/sprites/stickman38.png" type="Texture" id=2]
@@ -50,8 +50,14 @@
 [ext_resource path="res://MinosPrime/characters/prime/sprites/walk/minoswalk3.png" type="Texture" id=48]
 [ext_resource path="res://characters/stickman/sprites/wall_slam.png" type="Texture" id=49]
 [ext_resource path="res://ui/ActionSelector/StateIcons/wait.png" type="Texture" id=50]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement1.png" type="Texture" id=51]
 [ext_resource path="res://characters/stickman/sprites/stickman29.png" type="Texture" id=52]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement14.png" type="Texture" id=53]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement0.png" type="Texture" id=54]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement13.png" type="Texture" id=55]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement15.png" type="Texture" id=56]
 [ext_resource path="res://characters/BaseChar.gdshader" type="Shader" id=57]
+[ext_resource path="res://MinosPrime/characters/prime/sprites/judgement/judgement12.png" type="Texture" id=58]
 [ext_resource path="res://characters/stickman/sprites/stickman7.png" type="Texture" id=59]
 [ext_resource path="res://characters/stickman/sprites/stickman5.png" type="Texture" id=60]
 [ext_resource path="res://characters/stickman/sprites/stickman8.png" type="Texture" id=64]
@@ -159,7 +165,7 @@ animations = [ {
 "name": "InstantCancel",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 91 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 93 ), ExtResource( 89 ), null, ExtResource( 92 ), ExtResource( 86 ), ExtResource( 85 ), ExtResource( 90 ), ExtResource( 84 ) ],
+"frames": [ ExtResource( 54 ), ExtResource( 51 ), ExtResource( 91 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 93 ), ExtResource( 89 ), ExtResource( 92 ), ExtResource( 86 ), ExtResource( 85 ), ExtResource( 90 ), ExtResource( 84 ), ExtResource( 58 ), ExtResource( 55 ), ExtResource( 53 ), ExtResource( 56 ) ],
 "loop": true,
 "name": "Judgement",
 "speed": 5.0
@@ -238,7 +244,8 @@ extra_color_2 = Color( 0.627451, 0.796078, 0.905882, 1 )
 [node name="Sprite" parent="Flip" index="0"]
 material = SubResource( 1 )
 frames = SubResource( 2 )
-animation = "WalkForward"
+animation = "Judgement"
+frame = 14
 offset = Vector2( 0, -17 )
 
 [node name="DashForward" parent="StateMachine" index="24"]
@@ -290,7 +297,7 @@ spawn_particle = false
 [node name="Judgement" type="Node2D" parent="StateMachine" index="55"]
 script = ExtResource( 94 )
 sprite_animation = "Judgement"
-anim_length = 10
+anim_length = 16
 enter_sfx = ExtResource( 97 )
 enter_sfx_volume = -5.0
 title = "Judgement"
@@ -308,8 +315,9 @@ supers_used_ = 3
 [node name="Hitbox" type="Node2D" parent="StateMachine/Judgement" index="0"]
 z_index = 1000
 script = ExtResource( 83 )
-x = 20
+x = 18
 y = -17
+width = 17
 height = 8
 damage = 1
 hitstun_ticks = 23
@@ -329,7 +337,7 @@ hit_sound = ExtResource( 95 )
 dir_y = "-0.25"
 knockback = "14.0"
 launch_reversible = true
-start_tick = 10
+start_tick = 14
 active_ticks = 3
 
 [node name="Thy" type="Node2D" parent="StateMachine" index="56"]
