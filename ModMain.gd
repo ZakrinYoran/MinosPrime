@@ -4,7 +4,19 @@ var _savedObjects = []
 
 
 func _init(modLoader = ModLoader):
-	  installScriptExtension("res://MinosPrime/CharacterSelect.gd")
+	installScriptExtension("res://MinosPrime/CharacterSelect.gd")
+
+
+func _ready():
+	pass
+
+
+# Helper function to replace scenes
+func replaceScene(path:String, oldPath:String):
+	var scene = load(path)
+	scene.take_over_path(oldPath)
+	print("Replacing Scene: %s <- %s" % [oldPath, path])
+	_savedObjects.append(scene)
 
 
 # Helper function to extend scripts
